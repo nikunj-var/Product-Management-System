@@ -15,7 +15,7 @@ function validateInput(){
 	var flag = true;
 	if(document.getElementById("id").value == ""){
 		document.getElementById("spanid").innerHTML =  "Product id is required";
-		document.getElementById("spanid").style.backgroundColor = "teal";
+		
 		flag = false;
 	}
 	else{
@@ -23,7 +23,7 @@ function validateInput(){
 	}
 	if(document.getElementById("name").value == ""){
 		document.getElementById("spanname").innerHTML =  "Product name is required";
-	document.getElementById("spanid").style.backgroundColor = "teal";
+	
 		flag = false;
 	}
 	else{
@@ -31,8 +31,7 @@ function validateInput(){
 	}
 	if(document.getElementById("price").value == ""){
 		document.getElementById("spanprice").innerHTML =  "Product price is required";
-		document.getElementById("spanid").style.backgroundColor = "teal";
-
+		
 		flag = false;
 	}
 	else{
@@ -40,7 +39,6 @@ function validateInput(){
 	}
 	if(document.getElementById("quantity").value == ""){
 		document.getElementById("spanquantity").innerHTML =  "Product quantity is required";
-		document.getElementById("spanid").style.backgroundColor = "teal";
 		flag = false;
 	}
 	else{
@@ -52,7 +50,6 @@ function validateInput(){
 function checkvalue(id){
 	if(id.value == ""){
 		document.getElementById("spanid").innerHTML =  "Product id is required";
-		document.getElementById("spanid").style.backgroundColor = "teal";
 
 	}
 	else{

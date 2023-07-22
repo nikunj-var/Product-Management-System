@@ -17,6 +17,7 @@
 			<th>Brand</th>
 			<th>Quantity</th>
 			<th>Price</th>
+			<th style="color:grey;">Action</th>
 		</tr>
 		<%
 			while(rst.next()){
@@ -27,6 +28,10 @@
 					<td><%=rst.getString(3) %></td>
 					<td><%=rst.getString(4) %></td>
 					<td><%=rst.getString(5) %></td>
+					<td><a href="#">Edit |</a> 
+					<!-- url rewriting -->
+					<a href="delete.jsp?pid=<%= rst.getString(1) %>">Delete</a></td>
+					 
 				</tr>
 				<% 
 			}
