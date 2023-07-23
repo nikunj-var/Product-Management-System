@@ -1,19 +1,28 @@
-<%@ include file = "navbar.jsp"%>
-<%@ include file = "connection.jsp"%>
+
+<%@include file = "connection.jsp"%>
+<%@include file = "navbar.jsp"%>
 <html>
-	<body onload = makeActive("list")>
-	<%
+<body  onload = makeActive("edit")>
+	<%	
+
 		String[] str = {
 				"Logitech","Dell","Apple","Samsung","Microsoft","Mi"
 		};
-		PreparedStatement ps = cn.prepareStatement("select * from product_info where pid = ?");
-		ps.setString(1, request.getParameter("pid"));
-		ResultSet rst = ps.executeQuery();
-		rst.next();
 		
-	%>
-	<form action = "update-record.jsp" method = "post">
-		<table class='table'>
+		String pid = request.getParameter("id");
+		
+		String query = "select * from product_info where pid=?";
+		
+		PreparedStatement ps = cn.prepareStatement(query);
+		ps.setString(1,pid);
+		
+		ResultSet rst = ps.executeQuery();
+		
+		if(rst.next()){
+			
+			%>
+			<form action = "update-record2.jsp" method = "post">
+			<table class='table'>
 			<tr >
 				<td class='tabledata'>Product id</td>
 				<td class='tabledata'>
@@ -70,4 +79,19 @@
 	</form>
 		
 	</body>
+</html>
+			
+			
+			<% 
+		}
+		else{
+			%>
+			<div class="div">
+			<h4>Product record with id <%=pid %> does not exist</h4>
+			</div>
+			
+			<% 
+		}
+	%>
+</body>
 </html>

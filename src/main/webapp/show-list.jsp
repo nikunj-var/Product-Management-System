@@ -21,16 +21,17 @@
 		</tr>
 		<%
 			while(rst.next()){
+				String pid = rst.getString(1);
 				%>
 				<tr>
-					<td><%=rst.getString(1) %></td>
+					<td><%=pid %></td>
 					<td><%=rst.getString(2) %></td>
 					<td><%=rst.getString(3) %></td>
 					<td><%=rst.getString(4) %></td>
 					<td><%=rst.getString(5) %></td>
-					<td><a href="#">Edit |</a> 
+					<td><a href="edit.jsp?pid=<%=pid%>">Edit |</a> 
 					<!-- url rewriting -->
-					<a href="delete.jsp?pid=<%= rst.getString(1) %>">Delete</a></td>
+					<a href="delete.jsp?pid=<%= pid %>" onclick="return confirm('Are you sure to delete this record?')">Delete</a></td>
 					 
 				</tr>
 				<% 

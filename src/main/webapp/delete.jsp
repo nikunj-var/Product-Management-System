@@ -16,7 +16,7 @@
 	%>
 	<div class="div">
 	<jsp:include page="show-list.jsp"/>
-		<h1>Product record with id <%=pid %> has been deleted successfully</h1>
+		<h4>Product record with id <%=pid %> has been deleted successfully</h4>
 		
 	</div>
 	<%-- <% 
